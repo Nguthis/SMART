@@ -117,13 +117,14 @@ input[type="submit"]{
     width: unset;
     cursor: pointer; 
 }
+
 .contact-right{
     background: rgb(143, 113, 56);
+    
     ul{
-        
         display: flex;
         justify-content: space-around;
-    };
+    }
     
     li{
         align-items: start;
@@ -133,7 +134,6 @@ input[type="submit"]{
         justify-content: space-between;
     }
     img{
-    margin:0;
     height: 50px;
     width: 50px;
     border: #F2F2F2 solid 3px;
@@ -197,4 +197,31 @@ a{
         
     }
 
+}
+@media only screen and (min-width: 1080px){
+    .name{
+        width: 1080px;
+        margin:0 auto;
+        padding: 4em 4em;
+        
+        
+    }
+    
+    .middle .name{
+        
+        display:flex;
+        justify-content:space-between;
+        text-align: left;
+        .title{
+            
+            margin: 2em 2em 0 .2em;
+            h1{
+                font-size:90px;
+                width:auto;
+            }
+        }
+        .passport{
+            width:auto;
+        }
+    }
 }

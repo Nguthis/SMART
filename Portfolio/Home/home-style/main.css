@@ -132,7 +132,6 @@ input[type=submit] {
   justify-content: space-between;
 }
 .contact-right img {
-  margin: 0;
   height: 50px;
   width: 50px;
   border: #F2F2F2 solid 3px;
@@ -190,5 +189,27 @@ a {
   }
   .home-head nav li.current a {
     font-weight: bold;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  .name {
+    width: 1080px;
+    margin: 0 auto;
+    padding: 4em 4em;
+  }
+  .middle .name {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .middle .name .title {
+    margin: 2em 2em 0 0.2em;
+  }
+  .middle .name .title h1 {
+    font-size: 90px;
+    width: auto;
+  }
+  .middle .name .passport {
+    width: auto;
   }
 }/*# sourceMappingURL=main.css.map */
