@@ -1,0 +1,38 @@
+body{
+    background-color: #F2F2F2;;
+    font-family:'Happy Monkey';
+    margin: 0;
+}
+.about-head{
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: underline;
+    h1{
+        padding: 8px 8px;
+        font-weight: bold;
+        font-size: 70px;
+        span{
+            color:  rgb(143, 113, 56);
+        }
+    }
+}
+.about-middle{
+    border: 10px  solid black;
+    border-radius:10px ;
+}
+.container{
+    background:rgb(143, 113, 56) ;
+    
+    padding: 30px;
+    border-radius:20px ;
+
+    a{
+        text-align: center;
+        font-size: 30px;
+        color: black;
+        text-decoration: none;
+    }
+}
