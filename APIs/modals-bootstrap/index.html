@@ -11,7 +11,7 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h2>Posts</h2>
       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add</button>
-      <button class="btn btn-info" onclick="getAllPosts()">Get All</button>
+      <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#getbyid" onclick="getbyid()">Get by id</button>
     </div>
 
     <table class="table table-bordered">
@@ -62,6 +62,26 @@
       </form>
     </div>
   </div>
+<!-- Get by id -->
+<div class="modal fade" id="getbyid" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content" id="getpostform">
+      <div class="modal-header">
+        <h5 class="modal-title">Get A New Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label>ID</label>
+          <input type="number" class="form-control" id="renderid" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
 
   <!-- Edit Modal -->
   <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
@@ -101,7 +121,7 @@
     let posts = [];
 
     // Fetch posts from JSONPlaceholder and populate the table
-    function getAllPosts() {
+    
       fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then(fetchedPosts => {
@@ -109,7 +129,7 @@
           renderPosts();
         })
         .catch(error => console.error('Error fetching posts:', error));
-    }
+    
 
     // Function to render posts in the table
     function renderPosts() {
@@ -127,69 +147,121 @@
           <td>
             <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal" onclick="openEditModal(${post.id})">Edit</button>
             <button class="btn btn-sm btn-danger" onclick="deletePost(${post.id})">Delete</button>
-          </td>
-        `;
+          </td>`;
         tableBody.appendChild(row);
       });
     }
+    
+const url = 'https://jsonplaceholder.typicode.com/posts/1'; // Replace with your endpoint
+const data = {
+ 
+};
+
+fetch(url, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(updatedData => {
+  console.log('Success:', updatedData);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+
+//Get post by id
+function getbyid(){
+  document.getElementById('getpostform').addEventListener('submit', function(event) {
+     event.preventDefault();
+    
+      const postid = document.getElementById('renderid').value;
+      if (postid){
+    fetch (`https://jsonplaceholder.typicode.com/posts/${postid}`)
+    .then (res => res.json())
+    .then(data => {
+      console.log(data);
+          // posts = data;
+          // renderPosts();
+          const row = document.createElement('tr');
+        // row.dataset.id = post.id; // Set the ID as a data attribute for easy reference
+        row.innerHTML = `
+          <td>${post.userId}</td>
+          <td>${post.id}</td>
+          <td>${post.title}</td>
+          <td>${post.body}</td>
+          `
+    })
+       .catch(error => console.error('Error fetching posts:', error));
+} 
+  })
+ }
 
     // Open the Edit Modal and populate with current post data
-    function openEditModal(postId) {
-      const post = posts.find(p => p.id === postId);
-      document.getElementById('editUserId').value = post.userId;
-      document.getElementById('editId').value = post.id;
-      document.getElementById('editTitle').value = post.title;
-      document.getElementById('editBody').value = post.body;
-    }
+  function openEditModal(postId) {
+   const post = posts.find(p => p.id === postId);
+   document.getElementById('editUserId').value = post.userId;
+    document.getElementById('editId').value = post.id;
+   document.getElementById('editTitle').value = post.title;
+    document.getElementById('editBody').value = post.body;
+     }
 
-    // Handle adding a new post
-    document.getElementById('addPostForm').addEventListener('submit', function(event) {
-      event.preventDefault();
+    // // Handle adding a new post
+     document.getElementById('addPostForm').addEventListener('submit', function(event) {
+     event.preventDefault();
 
       const newPost = {
-        userId: parseInt(document.getElementById('addUserId').value),
-        id: parseInt(document.getElementById('addId').value),
+       userId: parseInt(document.getElementById('addUserId').value),
+      id: parseInt(document.getElementById('addId').value),
         title: document.getElementById('addTitle').value,
         body: document.getElementById('addBody').value
-      };
+     };
 
       posts.unshift(newPost); // Add the new post to the beginning of the array (top of the table)
       renderPosts(); // Re-render the table with the new post
 
-      // Close the modal after submission
+    //   // Close the modal after submission
       document.querySelector('#addModal .btn-close').click();
-    });
+     });
 
-    // Handle editing an existing post
+    // // Handle editing an existing post
     document.getElementById('editPostForm').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      const postId = parseInt(document.getElementById('editId').value);
+       const postId = parseInt(document.getElementById('editId').value);
       const updatedPost = {
-        userId: parseInt(document.getElementById('editUserId').value),
+    //     userId: parseInt(document.getElementById('editUserId').value),
         id: postId,
         title: document.getElementById('editTitle').value,
-        body: document.getElementById('editBody').value
+       body: document.getElementById('editBody').value
       };
 
-      // Find and update the post in the posts array
-      const index = posts.findIndex(p => p.id === postId);
+    //   // Find and update the post in the posts array
+    const index = posts.findIndex(p => p.id === postId);
       if (index !== -1) {
         posts[index] = updatedPost;
-        renderPosts(); // Re-render the table with updated data
+      renderPosts(); // Re-render the table with updated data
       }
 
       // Close the modal after submission
       document.querySelector('#editModal .btn-close').click();
-    });
+     });
 
-    // Handle deleting a post
+    // // Handle deleting a post
     function deletePost(postId) {
       const index = posts.findIndex(p => p.id === postId);
       if (index !== -1) {
         posts.splice(index, 1); // Remove the post from the array
-        renderPosts(); // Re-render the table to reflect the deletion
-        alert('Post deleted!');
+       renderPosts(); // Re-render the table to reflect the deletion
+       alert('Post deleted!');
       }
     }
   </script>
