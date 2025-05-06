@@ -29,7 +29,7 @@ Some of the challenges occured were:
     1. Directory arrangement where I had to arrange my files well so that the main page could be seen.
     2. Still was learning of git commands to push my changes and doing it with ease.
 
-![image of the url](./attachment-images\vercel.png "Portfolio website")
+![image of the url](./attachment-images/vercel.png "Portfolio website")
 
 ### Serving it with Nginx (both HTTP and HTTPS)
 I got to learn about hosting my website on Nginx which proved to be an educative challenge and further brought to my exposure towards backend programming.
