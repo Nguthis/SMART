@@ -7,6 +7,7 @@ I am grateful for this opportunity given to me by this Great establishment!!!
 [WEBSITE LINK](https://portfolio-rho-gilt-37.vercel.app/)
 ### HTML and CSS part
 I got to learn;
+
     1.Website responsivity
     2. Essential HTML concepts
     3. Essential CSS concepts
@@ -26,8 +27,11 @@ Nevertheless, the experience was very engaging and proved to be an **eye-opener*
 
 I got to learn about deployng my website on Vercel. I chose vercel because it was easy to use it and it was user friendly. Ofcourse there were other websites like Netlify etc but this website stood out  the most.
 Some of the challenges occured were:
+
     1. Directory arrangement where I had to arrange my files well so that the main page could be seen.
     2. Still was learning of git commands to push my changes and doing it with ease.
+
+Heres and image snip of the website url;
 
 ![image of the url](./attachment-images/vercel.png "Portfolio website")
 
@@ -70,4 +74,17 @@ Challenges include:
         1. Learning the Docker scripts and commands which were quite many.
         2. Writing codes in JSON format and integrating it with the Docker code proved to be difficult but eventually managed to do it.
         3. Some commands were  not accepted by the PowerShell on the VsCode, I  had to put some Bypass some authorization
-    
+
+
+This was a wonderful experience that I got to learn alot regarding Pipelinig codes , CI/CD. It might have been some few lines of easy code but this proves to be a stepping stone toward my journey into DevOps and Cloud engineering career.
+
+This is the Docker container snippet:
+![Docker-container of the website image](./attachment-images/docker-container.png "Docker-container of the website image")
+
+This is the Docker image snippet:
+![Docker-image of the website image](./attachment-images/docker-image.png "Docker-immage of the website image")
+
+This is the Docker code snippet:
+![Docker-code-snippet of the website image](./attachment-images/docker-code-snippet.png "Docker-code-snippet of the website image")
+
+
