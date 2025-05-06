@@ -34,6 +34,7 @@ Some of the challenges occured were:
 ### Serving it with Nginx (both HTTP and HTTPS)
 I got to learn about hosting my website on Nginx which proved to be an educative challenge and further brought to my exposure towards backend programming.
 I got to learn about;
+
     1. Static website hosting
     2. Directory arrangement
     3. Https hosting 
@@ -41,6 +42,7 @@ I got to learn about;
     5. domain accepted certificates and self accepting certificates
 
 Challenges were  many which included;
+
     1. Learning Nginx proved to be challenging since it was very broad for something under a very short time.
     2. Directory rendering so that I could put the right directory for hosting.
     3. Secure hosting was a well known concept theoretically but practically was really tough.
@@ -49,12 +51,13 @@ Challenges were  many which included;
 
 Nevertheless it **proved** to be an awesome challenge that I managed to host my website both statically and dynamically securerly. I also got to learn some scripting which was a well bound challenge..
 
-![Snippet of nginx code](./attachment-images/vercel.png "Snippet of nginx code")
+![Snippet of nginx code](./attachment-images/nginx-snippet.png "Snippet of nginx code")
 
 ### Serving the website and deploying it with Docker
 
 This was beyond the **most challenging** concept which sparked my curiosity and love for DevOps engineering.
 I got to learn alot especially regarding:
+
         1. Docker scripts and code.
         2. JSON commands to use when dockerizing the images
         3. Docker codes to execute the scripts previously written
@@ -63,6 +66,7 @@ I got to learn alot especially regarding:
         6. Assigning different IP adresses for the websites
 
 Challenges include:
+
         1. Learning the Docker scripts and commands which were quite many.
         2. Writing codes in JSON format and integrating it with the Docker code proved to be difficult but eventually managed to do it.
         3. Some commands were  not accepted by the PowerShell on the VsCode, I  had to put some Bypass some authorization
